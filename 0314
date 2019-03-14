@@ -1,0 +1,61 @@
+m_str = "python程式設計"
+print("[2:5] = ", m_str[2:5])
+print("[3:9] = ", m_str[3:9])
+print("[3:-1] =", m_str[3:-1])
+print("[-1:-7] = ", m_str[-1:-7])
+print("[-7:-1] = ", m_str[-7:-1])
+print("[-1:-7:-1] = ", m_str[-1:-7:-1])
+print("[::-1] = ", m_str[::-1])
+
+###
+
+import random
+q= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+random.shuffle(q)
+print(q[:4])
+random.shuffle(q)
+print(q[:4])
+random.shuffle(q)
+print(q[:4])
+
+###
+
+mInput = input("請輸入:")
+print("是不是全字母", str.isalpha(mInput))
+print("是不是全數字", mInput.isdigit())
+print("轉大寫", mInput.upper())
+
+###
+
+x = 3.1415926
+y = 10.123456789
+print(format(y, "5.2f"), format(x, "5.2f"))
+print("{0:5.2f} > {1:5.2f}".format(y,x))
+print("%5.2f > %5.2f" % (y, x))
+
+###
+
+z = 15
+if z > 10:
+    print("bigger than 10")
+    print("^^^^")
+else:
+    print("smaller/equal")
+    
+###
+
+
+import random
+n = random.randint(0, 100)
+
+m = int(input("請輸入整數(0~100):"))
+
+if m > n:
+    print("bigger than n")
+    print("{} > {}".format(m, n))
+elif m == n:
+    print("same")
+    print("{} = {}".format(m, n))
+else:
+    print("smaller/equal")
+    print("{} > {}".format(n, m))
