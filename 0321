@@ -1,0 +1,62 @@
+n1 = int(input("print1:"))
+n2 = int(input("print2:"))
+n3 = int(input("print3:"))
+print("輸入了%d, %d, %d" %(n1, n2, n3))
+
+#1--------------------
+# if n1 > n2 :
+#     if n3 > n1:
+#         print("%d > %d > %d" %(n3, n1, n2))
+#     elif n2 > n3:
+#         print("% > %d > %d" %(n1, n2, n3))
+#     else:
+#         print("%d > %d > %d" %(n1, n3, n2))
+# else: #n2 > n1
+#     if n3 > n2:
+#         print("%d > %d > %d" %(n3, n2, n1))
+#     elif n1 > n3:
+#         print("%d > %d > %d" %(n2, n1, n3))
+#     else:
+#         print("%d > %d > %d" %(n2, n3, n1))
+
+#2--------------------
+if n1 < n2:
+    n1, n2 = n2, n1
+if n2 < n3:
+    n2, n3 = n3, n2
+if n1 < n2:
+    n1, n2 = n2, n1
+print("%d > %d > %d" %(n1, n2, n3))
+
+#--------------------
+import random
+min = 0
+max = 100
+ans = int(random.randint(min, max))
+print("ans=", ans)
+
+minput = int(input("input %d ~ %d 的整數" %(min, max)))
+while minput != ans:
+    if min < minput < max:
+        if minput < ans:
+            min = minput + 1
+        else:
+            max = minput - 1
+    minput = int(input("input %d ~ %d 的整數" %(min, max)))
+else:
+    print("bingo~~ans =", ans)
+ 
+#-------------------- 
+result1, result2 = '', ''
+for i in range(1, 10):
+    result1 = ''
+    for j in range(1, 10):
+        result1 = result1 + str(i) + '*' + str(j) + '=' + str(i * j) + '\t'
+    result2 = result2 + result1 + '\n'
+print(result2)
+ 
+#-------------------- 
+for i in range(1, 10):
+    for j in range(1, 10):
+        print("{:>2d}x{:>2d}={:>3d}".format(i, j, i*j), end = '')
+    print('')
