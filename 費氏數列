@@ -1,0 +1,9 @@
+def fib(user_input):
+  if user_input ==1 or user_input ==2:
+    return 1
+  else:
+    return fib(user_input-1) + fib(user_input-2) 
+
+user_input = int(input("請輸入一個整數:"))
+
+print("fib({})=".format(user_input), fib(user_input))
