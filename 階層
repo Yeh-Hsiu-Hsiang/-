@@ -1,0 +1,13 @@
+while True:
+    user_input = int(input("請輸入一個整數:"))
+    a = 0
+        
+    if user_input <= 0:
+        print("請輸入大於等於0的數字")
+        continue
+    else:
+        for i in range(user_input+1):
+            a += i
+            print(i)
+        print(a)
+        break
