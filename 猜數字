@@ -1,0 +1,18 @@
+import random
+min = 0
+max = 100
+ans = int(random.randint(min, max))
+print("ans=", ans)
+
+minput = int(input("請輸入數字(%d < ? < %d) :" %(min, max)))
+while minput != ans:
+    if min < minput < max:
+        if minput < ans:
+            min = minput + 1
+        else:
+            max = minput - 1
+    else:
+        print("輸入範圍錯誤,", end="")
+    minput = int(input("請輸入數字(%d < ? < %d) :" %(min, max)))
+else:
+    print("bingo~~ans =", ans)
