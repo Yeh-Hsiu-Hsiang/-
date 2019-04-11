@@ -1,0 +1,22 @@
+#計算BM
+#公式為:體重(公斤)/(身高(公尺))**2
+
+#提示使用者輸入體重 
+weight = eval(input("請輸入體重(公斤): "))
+#提示使用者輸入身高 
+height = eval(input("請輸入身高(公分): "))
+
+#計算BMI
+weightInKilograms = weight
+heightInMeters = height / 100
+bmi = weightInKilograms / ( heightInMeters ** 2 )
+#顯示結果
+print("BMI is", format(bmi, ".2f"))
+if bmi < 18.5:
+    print("體重不足")
+elif bmi < 25:
+    print("正常")
+elif bmi < 30:
+    print("過重")
+else:
+    print("肥胖")
