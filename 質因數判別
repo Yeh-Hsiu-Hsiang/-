@@ -7,4 +7,30 @@ if user_input > 1:
            break
    else:
        print(user_input, "是質數")
+       
+ 
+#------------------
 
+user_input = int(input("please input your number:"))
+for i in range(2, user_input+1):
+    for j in range(2, i-1): 
+        if i%j == 0:
+            break
+    else:
+        print(i, "is 質數")
+        
+#------------------
+
+user_input = int(input("please input your number:"))
+
+def isPrime(user_input):
+    for i in range(2, user_input):
+        if user_input % i == 0:
+                return False
+        else:
+            return True
+
+if isPrime(user_input) is True:
+    print(user_input, "is 質數")
+else:
+    print(user_input, "is not 質數")
