@@ -1,0 +1,63 @@
+mlist1 = [i for i in range(10)]
+print(mlist1)
+mlist1 = [i*i for i in range(10)]
+print(mlist1)
+mlist1 = [i for i in range(10) if i % 2 == 0]
+print(mlist1)
+
+mlist1 = ['even' if i % 2 == 0 else 'odd' for i in range(10)]
+print(mlist1)
+
+##
+import random
+mdata = list(range(10))
+print(random.sample(mdata, 4))
+
+##
+mres = []
+for _ in range(4):
+    mres.append(random.choice([x for x in mdata if x not in mres]))
+print(mres)
+
+##
+className = ['java', 'python', 'c++']
+grades = [[95, 100, 100], 
+[86, 90, 75], 
+[98, 98, 96], 
+[78, 90, 80], 
+[70, 68, 72]]
+
+for i in range(len(grades)):
+    sum = 0
+    for j in range(len(grades[i])):           		
+        sum += grades[i][j]
+    print("std-{0} avg={1:.2f}".format(i+1, sum/len(grades[i])))
+
+print("------------")
+
+for i , std in enumerate(grades):
+    sum = 0
+    for grade in std:
+        sum += grade
+        print("std-{0} avg={1:.2f}".format(i+1, sum/len(std)))
+
+print("------------")
+for r in range(3):
+    sum = 0
+    for k in range(len(grades)):
+        sum += grades[k][r]
+    print("{0} avg={1:.2f}".format(className[r], sum / len(grades)))
+    
+##
+set1 = {1, 2, 3, 4 ,4}
+set2 = {1, 2, 3, 5}
+print(set1.issubset(set2))
+print(set1.union(set2))
+
+set3 = {2, 4, 10}
+print(set1.intersection(set3))
+
+##
+dictGrade = {'java': 0, 'python': 1, 'C++': 2}
+for key in dictGrade.keys():
+    print("{0}-{1}".format(key, dictGrade[key]))
