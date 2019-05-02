@@ -1,0 +1,43 @@
+import turtle
+import random
+
+#----------------
+turtle.left(45)
+turtle.forward(100)
+
+turtle.reset()
+turtle.circle(50, steps=6)
+
+#----------------
+screen = turtle.Screen()
+screen.setup(500,500)
+mpen = turtle.Turtle()
+mpen.color('red', 'yellow')
+mpen.begin_fill()
+mpen.speed(1)
+while True:
+    mpen.forward(200)
+    mpen.left(170)
+    if abs(mpen.pos()) < 1:
+        break
+mpen.end_fill()
+turtle.done()
+
+#----------------
+screen = turtle.Screen()
+screen.setup(500,500)
+mpen = turtle.Turtle()
+mpen.pensize(20)
+mpen.shape('turtle')
+
+for _ in range(500):
+    mpen.penup()
+    mpen.setposition(random.randint(-200,200), random.randint(-200,200))
+    mpen.setheading(random.randint(0, 360))
+    if mpen.heading() > 100:
+        mpen.color('gray', 'blue')
+    else:
+        mpen.color('yellow', 'red')
+    mpen.pendown()
+    mpen.stamp()
+turtle.done()
