@@ -1,0 +1,24 @@
+fileObj = open('readme.txt', 'r', encoding='UTF-8')
+fileObj2 = open('copy.txt', 'w', encoding='UTF-8')
+line = fileObj.readline()
+if line != '':
+    print(line)
+    fileObj2.write('read:' + line)
+fileObj.close()
+fileObj2.close()
+
+#-----------
+
+import os
+if os.path.exists('readme.txt'):
+    with open('readme.txt', 'r', encoding='UTF-8') as fileObj:
+        content = fileObj.readlines()
+        print(content)
+    
+    with open('copy.txt', 'w', encoding='UTF-8') as fileObj2:
+        for line in content:
+            print(line)
+            fileObj2.write('read: ' + line)
+
+else:
+    print('readme2.txt file not found')
