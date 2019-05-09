@@ -1,0 +1,5 @@
+import qrcode
+from PIL import Image
+im = qrcode.make("http://www.ntub.edu.tw")
+im.show()
+im.save("myqrcode.jpg")
