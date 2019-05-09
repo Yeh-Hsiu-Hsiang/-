@@ -1,0 +1,8 @@
+from PIL import Image
+from PIL import ImageFilter
+
+im = Image.open("C:\\girl.jpg")
+fuzzy = im.filter(ImageFilter.BLUR) #模糊
+newim = im.filter(ImageFilter.CONTOUR) #輪廓
+im.show()
+newim.show()
