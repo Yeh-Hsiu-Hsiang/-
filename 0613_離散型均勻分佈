@@ -1,0 +1,10 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+rv = stats.randint(low = 1, high = 11)
+print(rv)
+x = np.arange(rv.ppf(0.01), rv.ppf(0.99))
+plt.plot(x, rv.pmf(x), "bo", label = "randint pmf")
+plt.vlines(x, 0, rv.pmf(x), "b", linestyles = "dashed", alpha = 0.5)
+plt.legend()
+plt.show()
