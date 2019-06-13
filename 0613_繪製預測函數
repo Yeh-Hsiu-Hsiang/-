@@ -1,0 +1,19 @@
+# use interp1d() from scipy.interpolate
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.interpolate import interp1d
+
+f = lambda x: np.cos(-x ** 2 / 9.0)
+x = np.linspace(-12, 12, num = 25)
+y = f(x)
+g1 = interp1d(x, y)
+g2 = interp1d(x, y, kind = "cubic")
+xnew = np.linspace(-12, 12, num = 49)
+ynew1 = g1(xnew)
+ynew2 = g2(xnew)
+plt.plot(x, y, "bo", label = "data")
+plt.plot(xnew, ynew1, "r-", label = "linear")
+plt.plot(xnew, ynew2, "g--", label = "cubic")
+plt.legend(loc = "lower center")
+plt.show()
